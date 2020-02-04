@@ -73,9 +73,9 @@ func humanateBit(s uint64, base float64, sizes []string) string {
 	return fmt.Sprintf(f, val, suffix)
 }
 
+//workaround to return values in bps directly
 func HumanizeBit(s uint64) string {
-	sizes := []string{"bps", "Kbps", "Mbps", "Gbps", "Tbps", "Pbps", "Ebps"}
-	return humanateBit(s, 1000, sizes)
+	return fmt.Sprintf("%d", s)
 }
 
 func ParseBit(s string) (uint64, error) {
